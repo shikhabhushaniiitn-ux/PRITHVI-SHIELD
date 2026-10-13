@@ -1,7 +1,6 @@
-
-project:
+﻿project:
   name: PRITHVI-SHIELD
-  version: 0.1.0
+  version: "0.1.0"
   environment: development
 
 application:
@@ -11,11 +10,16 @@ application:
 scenario:
   default_region: trishuli_river_corridor
   default_hazard: flood
+  event_period:
+    start_date: "2026-08-01"
+    end_date: "2026-08-31"
 
 data:
+  primary_source: sentinel-1-grd
   allow_network_downloads: false
   record_provenance: true
   require_source_metadata: true
+  reference_maps_for_validation_only: true
 
 processing:
   save_intermediate_outputs: true
