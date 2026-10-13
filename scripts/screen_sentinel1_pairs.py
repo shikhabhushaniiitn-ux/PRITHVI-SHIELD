@@ -483,9 +483,11 @@ def main() -> None:
         "max_days_apart": MAX_DAYS_APART,
         "catalogue_limit_per_window": CATALOGUE_LIMIT,
         "pagination_note": (
-            "The current catalogue client does not follow STAC next links. "
-            "This report only assesses the items returned by each request; "
-            "catalogue coverage may be incomplete."
+            "The catalogue client follows STAC next-page links when provided "
+            "by the server and combines results across pages. Live searches "
+            "returned 8 pre-event and 8 post-event items for the configured "
+            "windows. These counts alone do not prove that multiple pages "
+            "were available or retrieved."
         ),
         "interpretation_note": (
             "Candidate status means metadata checks and configured footprint "

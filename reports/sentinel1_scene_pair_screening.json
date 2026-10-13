@@ -1,7 +1,7 @@
 {
   "project": "PRITHVI-SHIELD",
   "purpose": "Sentinel-1 metadata and footprint-based scene-pair screening",
-  "generated_at_utc": "2026-10-13T14:18:25.588660+00:00",
+  "generated_at_utc": "2026-10-13T14:41:33.424511+00:00",
   "catalogue_endpoint": "https://stac.dataspace.copernicus.eu/v1/search",
   "collection": "sentinel-1-grd",
   "search_bbox_wgs84": [
@@ -42,7 +42,7 @@
   ],
   "max_days_apart": 30,
   "catalogue_limit_per_window": 100,
-  "pagination_note": "The current catalogue client does not follow STAC next links. This report only assesses the items returned by each request; catalogue coverage may be incomplete.",
+  "pagination_note": "The catalogue client follows STAC next-page links when provided by the server and combines results across pages. Live searches returned 8 pre-event and 8 post-event items for the configured windows. These counts alone do not prove that multiple pages were available or retrieved.",
   "interpretation_note": "Candidate status means metadata checks and configured footprint coverage thresholds passed. It does not establish valid pixel coverage, co-registration, radiometric comparability, flood extent, or damage. Different pair combinations are not necessarily independent observations.",
   "pre_event_items_returned": 8,
   "post_event_items_returned": 8,
