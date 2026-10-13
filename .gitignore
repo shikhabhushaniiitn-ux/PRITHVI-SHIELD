@@ -1,0 +1,42 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local datasets and generated outputs
+data/raw/*
+data/processed/*
+outputs/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!outputs/.gitkeep
+
+# Large model files
+models/
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
