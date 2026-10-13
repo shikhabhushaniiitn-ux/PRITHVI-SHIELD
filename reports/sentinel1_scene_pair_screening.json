@@ -1,0 +1,1167 @@
+{
+  "project": "PRITHVI-SHIELD",
+  "purpose": "Sentinel-1 metadata-based scene-pair screening",
+  "generated_at_utc": "2026-10-13T19:31:51.071768+05:30",
+  "catalogue_endpoint": "https://stac.dataspace.copernicus.eu/v1/search",
+  "collection": "sentinel-1-grd",
+  "search_bbox_wgs84": [
+    84.2,
+    27.6,
+    85.6,
+    28.4
+  ],
+  "pre_event_window": [
+    "2026-08-10T00:00:00Z",
+    "2026-08-26T00:00:00Z"
+  ],
+  "post_event_window": [
+    "2026-08-27T00:00:00Z",
+    "2026-09-10T00:00:00Z"
+  ],
+  "max_days_apart": 30,
+  "catalogue_limit_per_window": 100,
+  "pagination_note": "The current catalogue client does not follow STAC next links. This report assesses only the items returned by each request; catalogue coverage may therefore be incomplete.",
+  "interpretation_note": "A candidate passed metadata checks only. This does not confirm study-area coverage, geometric co-registration, radiometric comparability, flood extent, or damage.",
+  "pre_event_items_returned": 8,
+  "post_event_items_returned": 8,
+  "pre_event_items_converted": 8,
+  "post_event_items_converted": 8,
+  "pre_event_rejected_items": [],
+  "post_event_rejected_items": [],
+  "chronologically_valid_pairs_assessed": 64,
+  "candidate_pair_count": 30,
+  "candidate_pairs": [
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 11,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 23,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 11,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 23,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    }
+  ],
+  "all_pair_assessments": [
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 11,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 9,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 4,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 4,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 9,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 4,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 4,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 14,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 14,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": false,
+      "days_between_acquisitions": 9,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ.",
+        "Footprint bounding boxes do not overlap."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 21,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 21,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": false,
+      "days_between_acquisitions": 14,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ.",
+        "Footprint bounding boxes do not overlap."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 9,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 9,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 23,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 19,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 19,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 14,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 11,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 19,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 19,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 14,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 28,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 28,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 23,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 21,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 28,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 28,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 21,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": false,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 16,
+      "candidate": false,
+      "reasons": [
+        "Orbit directions differ."
+      ]
+    }
+  ]
+}
