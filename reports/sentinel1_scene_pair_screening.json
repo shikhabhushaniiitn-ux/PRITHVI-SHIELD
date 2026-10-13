@@ -1,7 +1,7 @@
 {
   "project": "PRITHVI-SHIELD",
-  "purpose": "Sentinel-1 metadata-based scene-pair screening",
-  "generated_at_utc": "2026-10-13T19:31:51.071768+05:30",
+  "purpose": "Sentinel-1 metadata and footprint-based scene-pair screening",
+  "generated_at_utc": "2026-10-13T14:18:25.588660+00:00",
   "catalogue_endpoint": "https://stac.dataspace.copernicus.eu/v1/search",
   "collection": "sentinel-1-grd",
   "search_bbox_wgs84": [
@@ -10,6 +10,28 @@
     85.6,
     28.4
   ],
+  "aoi_status": "Provisional rectangular search envelope; not a validated study-area polygon.",
+  "coverage_method": {
+    "source": "STAC item GeoJSON footprint geometry",
+    "projected_crs": "EPSG:32645",
+    "individual_coverage": "Scene footprint intersection area divided by total AOI area.",
+    "shared_coverage": "Area covered by both footprints inside the AOI divided by total AOI area."
+  },
+  "screening_thresholds": {
+    "minimum_individual_aoi_coverage": 0.1,
+    "minimum_shared_aoi_coverage": 0.1,
+    "preferred_individual_and_shared_coverage": 0.8,
+    "note": "These are configurable screening choices, not universal scientific standards. Validate them for the final AOI and analysis objective."
+  },
+  "ranking_method": {
+    "event_reference_datetime_utc": "2026-08-26T00:00:00+00:00",
+    "weights": {
+      "shared_coverage": 0.7,
+      "weaker_individual_coverage": 0.2,
+      "temporal_proximity": 0.1
+    },
+    "note": "Heuristic ranking score from 0 to 100; not a probability, model confidence, flood detection, or damage estimate."
+  },
   "pre_event_window": [
     "2026-08-10T00:00:00Z",
     "2026-08-26T00:00:00Z"
@@ -20,65 +42,184 @@
   ],
   "max_days_apart": 30,
   "catalogue_limit_per_window": 100,
-  "pagination_note": "The current catalogue client does not follow STAC next links. This report assesses only the items returned by each request; catalogue coverage may therefore be incomplete.",
-  "interpretation_note": "A candidate passed metadata checks only. This does not confirm study-area coverage, geometric co-registration, radiometric comparability, flood extent, or damage.",
+  "pagination_note": "The current catalogue client does not follow STAC next links. This report only assesses the items returned by each request; catalogue coverage may be incomplete.",
+  "interpretation_note": "Candidate status means metadata checks and configured footprint coverage thresholds passed. It does not establish valid pixel coverage, co-registration, radiometric comparability, flood extent, or damage. Different pair combinations are not necessarily independent observations.",
   "pre_event_items_returned": 8,
   "post_event_items_returned": 8,
-  "pre_event_items_converted": 8,
-  "post_event_items_converted": 8,
+  "pre_event_items_usable_for_coverage": 8,
+  "post_event_items_usable_for_coverage": 8,
+  "pre_event_scene_coverage": {
+    "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 540.423364,
+      "coverage_fraction": 0.044254,
+      "coverage_percent": 4.43,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 11670.719434,
+      "coverage_fraction": 0.955682,
+      "coverage_percent": 95.57,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 4280.017122,
+      "coverage_fraction": 0.350478,
+      "coverage_percent": 35.05,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 2509.012156,
+      "coverage_fraction": 0.205456,
+      "coverage_percent": 20.55,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 10496.435868,
+      "coverage_fraction": 0.859523,
+      "coverage_percent": 85.95,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 1714.096815,
+      "coverage_fraction": 0.140362,
+      "coverage_percent": 14.04,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 539.452075,
+      "coverage_fraction": 0.044174,
+      "coverage_percent": 4.42,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 11671.684701,
+      "coverage_fraction": 0.955761,
+      "coverage_percent": 95.58,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    }
+  },
+  "post_event_scene_coverage": {
+    "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 10497.145416,
+      "coverage_fraction": 0.859581,
+      "coverage_percent": 85.96,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 1713.393862,
+      "coverage_fraction": 0.140305,
+      "coverage_percent": 14.03,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 541.222681,
+      "coverage_fraction": 0.044319,
+      "coverage_percent": 4.43,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 11669.933638,
+      "coverage_fraction": 0.955617,
+      "coverage_percent": 95.56,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 4284.958064,
+      "coverage_fraction": 0.350883,
+      "coverage_percent": 35.09,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 2517.068737,
+      "coverage_fraction": 0.206116,
+      "coverage_percent": 20.61,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 10496.299224,
+      "coverage_fraction": 0.859512,
+      "coverage_percent": 85.95,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    },
+    "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG": {
+      "intersects_aoi": true,
+      "aoi_area_km2": 12211.931218,
+      "intersection_area_km2": 1714.233297,
+      "coverage_fraction": 0.140374,
+      "coverage_percent": 14.04,
+      "reasons": [
+        "Scene intersects the AOI but does not cover the entire rectangle."
+      ]
+    }
+  },
   "pre_event_rejected_items": [],
   "post_event_rejected_items": [],
   "chronologically_valid_pairs_assessed": 64,
-  "candidate_pair_count": 30,
-  "candidate_pairs": [
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 11,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 6,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
+  "candidate_pair_count": 14,
+  "preferred_pair_count": 4,
+  "partial_coverage_pair_count": 10,
+  "rejected_pair_count": 50,
+  "candidate_pairs_ranked": [
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
       "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
@@ -88,284 +229,25 @@
       "days_between_acquisitions": 12,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 6,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 18,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 18,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 6,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 6,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 17,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 17,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 24,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 23,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 17,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 11,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 24,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 24,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 17,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 12,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 24,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 23,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 18,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
-    },
-    {
-      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
-      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001909_20260905T001934_004435_00837B_D10A_COG",
-      "orbit_direction_matches": true,
-      "polarizations_match": true,
-      "footprints_overlap": true,
-      "days_between_acquisitions": 24,
-      "candidate": true,
-      "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 11669.933638,
+        "shared_coverage_fraction": 0.955617,
+        "shared_coverage_percent": 95.56
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.6,
+      "ranking_score": 92.01,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 1
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -376,8 +258,286 @@
       "days_between_acquisitions": 24,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 11669.933638,
+        "shared_coverage_fraction": 0.955617,
+        "shared_coverage_percent": 95.56
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.2,
+      "ranking_score": 88.01,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 2
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10496.299052,
+        "shared_coverage_fraction": 0.859512,
+        "shared_coverage_percent": 85.95
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.6,
+      "ranking_score": 83.36,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 3
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10496.435868,
+        "shared_coverage_fraction": 0.859523,
+        "shared_coverage_percent": 85.95
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.2,
+      "ranking_score": 79.36,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 4
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4029.777578,
+        "shared_coverage_fraction": 0.329987,
+        "shared_coverage_percent": 33.0
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.7669,
+      "ranking_score": 37.78,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 5
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4280.017122,
+        "shared_coverage_fraction": 0.350478,
+        "shared_coverage_percent": 35.05
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.6,
+      "ranking_score": 37.54,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 6
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260902T122947_20260902T123012_004399_00822F_7364_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4034.275981,
+        "shared_coverage_fraction": 0.330355,
+        "shared_coverage_percent": 33.04
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.4331,
+      "ranking_score": 34.47,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 7
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122141_20260909T122206_004501_0085C5_3DCC_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 18,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4030.116209,
+        "shared_coverage_fraction": 0.330015,
+        "shared_coverage_percent": 33.0
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.3669,
+      "ranking_score": 33.78,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 8
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 6,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2517.068737,
+        "shared_coverage_fraction": 0.206116,
+        "shared_coverage_percent": 20.61
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.7669,
+      "ranking_score": 26.22,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 9
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_65B9_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2509.012156,
+        "shared_coverage_fraction": 0.205456,
+        "shared_coverage_percent": 20.55
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.6,
+      "ranking_score": 24.49,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 10
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 17,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2509.012156,
+        "shared_coverage_fraction": 0.205456,
+        "shared_coverage_percent": 20.55
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.4331,
+      "ranking_score": 22.82,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 11
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -388,8 +548,83 @@
       "days_between_acquisitions": 18,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2517.068737,
+        "shared_coverage_fraction": 0.206116,
+        "shared_coverage_percent": 20.61
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.3669,
+      "ranking_score": 22.22,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 12
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260828T122116_20260828T122141_004326_007FA4_34C6_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 12,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1714.09664,
+        "shared_coverage_fraction": 0.140362,
+        "shared_coverage_percent": 14.04
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.6,
+      "ranking_score": 18.63,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 13
+    },
+    {
+      "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
+      "post_event_product_id": "S1D_IW_GRDH_1SDV_20260909T122116_20260909T122141_004501_0085C5_BFF7_COG",
+      "orbit_direction_matches": true,
+      "polarizations_match": true,
+      "footprints_overlap": true,
+      "days_between_acquisitions": 24,
+      "candidate": true,
+      "reasons": [
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1713.393862,
+        "shared_coverage_fraction": 0.140305,
+        "shared_coverage_percent": 14.03
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.2,
+      "ranking_score": 14.63,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 14
     }
   ],
   "all_pair_assessments": [
@@ -402,8 +637,26 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 287.981229,
+        "shared_coverage_fraction": 0.023582,
+        "shared_coverage_percent": 2.36
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.4499,
+      "ranking_score": 7.04,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -414,8 +667,26 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 252.064843,
+        "shared_coverage_fraction": 0.020641,
+        "shared_coverage_percent": 2.06
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.45,
+      "ranking_score": 6.83,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -424,10 +695,28 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 12,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 540.423364,
+        "shared_coverage_fraction": 0.044254,
+        "shared_coverage_percent": 4.43
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.6,
+      "ranking_score": 9.98,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -436,10 +725,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 11,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.6,
+      "ranking_score": 6.89,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -450,8 +756,26 @@
       "days_between_acquisitions": 9,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 497.722464,
+        "shared_coverage_fraction": 0.040757,
+        "shared_coverage_percent": 4.08
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.6831,
+      "ranking_score": 10.57,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -460,10 +784,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 6,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.7669,
+      "ranking_score": 8.55,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -474,8 +815,26 @@
       "days_between_acquisitions": 4,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 287.735295,
+        "shared_coverage_fraction": 0.023562,
+        "shared_coverage_percent": 2.36
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.8499,
+      "ranking_score": 11.03,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001909_20260824T001934_004260_007D5D_72FF_COG",
@@ -486,8 +845,26 @@
       "days_between_acquisitions": 4,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044254,
+      "pre_event_aoi_coverage_percent": 4.43,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 252.307267,
+        "shared_coverage_fraction": 0.020661,
+        "shared_coverage_percent": 2.07
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.85,
+      "ranking_score": 10.83,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -498,8 +875,24 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10208.757445,
+        "shared_coverage_fraction": 0.835966,
+        "shared_coverage_percent": 83.6
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.4499,
+      "ranking_score": 80.21,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -510,8 +903,24 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1460.947626,
+        "shared_coverage_fraction": 0.119633,
+        "shared_coverage_percent": 11.96
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.4499,
+      "ranking_score": 15.68,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -520,10 +929,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 12,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.010896,
+        "shared_coverage_fraction": 1e-06,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.6,
+      "ranking_score": 6.89,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -534,8 +960,25 @@
       "days_between_acquisitions": 12,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 11669.933638,
+        "shared_coverage_fraction": 0.955617,
+        "shared_coverage_percent": 95.56
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.6,
+      "ranking_score": 92.01,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 1
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -546,8 +989,24 @@
       "days_between_acquisitions": 9,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 3786.67204,
+        "shared_coverage_fraction": 0.31008,
+        "shared_coverage_percent": 31.01
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.6831,
+      "ranking_score": 35.55,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -558,8 +1017,25 @@
       "days_between_acquisitions": 6,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2517.068737,
+        "shared_coverage_fraction": 0.206116,
+        "shared_coverage_percent": 20.61
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.7669,
+      "ranking_score": 26.22,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 9
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -570,8 +1046,24 @@
       "days_between_acquisitions": 4,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10208.157367,
+        "shared_coverage_fraction": 0.835917,
+        "shared_coverage_percent": 83.59
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.8499,
+      "ranking_score": 84.2,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG",
@@ -582,8 +1074,24 @@
       "days_between_acquisitions": 4,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955682,
+      "pre_event_aoi_coverage_percent": 95.57,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1461.544457,
+        "shared_coverage_fraction": 0.119682,
+        "shared_coverage_percent": 11.97
+      },
+      "pre_event_distance_from_reference_days": 1.99,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.8499,
+      "ranking_score": 19.68,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -594,8 +1102,25 @@
       "days_between_acquisitions": 18,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4030.116209,
+        "shared_coverage_fraction": 0.330015,
+        "shared_coverage_percent": 33.0
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.3669,
+      "ranking_score": 33.78,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 8
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -604,10 +1129,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 18,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 249.376431,
+        "shared_coverage_fraction": 0.020421,
+        "shared_coverage_percent": 2.04
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.3669,
+      "ranking_score": 7.9,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -618,8 +1159,26 @@
       "days_between_acquisitions": 14,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 498.068196,
+        "shared_coverage_fraction": 0.040785,
+        "shared_coverage_percent": 4.08
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.5169,
+      "ranking_score": 8.91,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -630,8 +1189,24 @@
       "days_between_acquisitions": 14,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 3781.396188,
+        "shared_coverage_fraction": 0.309648,
+        "shared_coverage_percent": 30.96
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.5169,
+      "ranking_score": 33.85,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -642,8 +1217,25 @@
       "days_between_acquisitions": 12,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4280.017122,
+        "shared_coverage_fraction": 0.350478,
+        "shared_coverage_percent": 35.05
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.6,
+      "ranking_score": 37.54,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 6
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -655,8 +1247,25 @@
       "candidate": false,
       "reasons": [
         "Orbit directions differ.",
-        "Footprint bounding boxes do not overlap."
-      ]
+        "Footprint bounding boxes do not overlap.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.6838,
+      "ranking_score": 10.96,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -667,8 +1276,25 @@
       "days_between_acquisitions": 6,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4029.777578,
+        "shared_coverage_fraction": 0.329987,
+        "shared_coverage_percent": 33.0
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.7669,
+      "ranking_score": 37.78,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 5
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260821T122946_20260821T123011_004224_007C0F_BB02_COG",
@@ -677,10 +1303,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 6,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.350478,
+      "pre_event_aoi_coverage_percent": 35.05,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 249.710408,
+        "shared_coverage_fraction": 0.020448,
+        "shared_coverage_percent": 2.04
+      },
+      "pre_event_distance_from_reference_days": 4.48,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.7669,
+      "ranking_score": 11.91,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -691,8 +1333,24 @@
       "days_between_acquisitions": 21,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1771.917913,
+        "shared_coverage_fraction": 0.145097,
+        "shared_coverage_percent": 14.51
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.2831,
+      "ranking_score": 17.1,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -703,8 +1361,25 @@
       "days_between_acquisitions": 21,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 736.767565,
+        "shared_coverage_fraction": 0.060332,
+        "shared_coverage_percent": 6.03
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.2831,
+      "ranking_score": 9.86,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -713,10 +1388,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 17,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.4331,
+      "ranking_score": 5.22,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -727,8 +1419,25 @@
       "days_between_acquisitions": 17,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2509.012156,
+        "shared_coverage_fraction": 0.205456,
+        "shared_coverage_percent": 20.55
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.4331,
+      "ranking_score": 22.82,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 11
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -740,8 +1449,25 @@
       "candidate": false,
       "reasons": [
         "Orbit directions differ.",
-        "Footprint bounding boxes do not overlap."
-      ]
+        "Footprint bounding boxes do not overlap.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.5162,
+      "ranking_score": 9.27,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -752,8 +1478,25 @@
       "days_between_acquisitions": 12,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2509.012156,
+        "shared_coverage_fraction": 0.205456,
+        "shared_coverage_percent": 20.55
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.6,
+      "ranking_score": 24.49,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 10
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -764,8 +1507,24 @@
       "days_between_acquisitions": 9,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1771.734398,
+        "shared_coverage_fraction": 0.145082,
+        "shared_coverage_percent": 14.51
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.6831,
+      "ranking_score": 21.1,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_B38C_COG",
@@ -776,8 +1535,25 @@
       "days_between_acquisitions": 9,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.205456,
+      "pre_event_aoi_coverage_percent": 20.55,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 736.95103,
+        "shared_coverage_fraction": 0.060347,
+        "shared_coverage_percent": 6.03
+      },
+      "pre_event_distance_from_reference_days": 6.99,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.6831,
+      "ranking_score": 13.86,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -788,8 +1564,25 @@
       "days_between_acquisitions": 24,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10496.435868,
+        "shared_coverage_fraction": 0.859523,
+        "shared_coverage_percent": 85.95
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.2,
+      "ranking_score": 79.36,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 4
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -798,10 +1591,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 23,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.2,
+      "ranking_score": 4.81,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -812,8 +1621,26 @@
       "days_between_acquisitions": 19,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 288.211957,
+        "shared_coverage_fraction": 0.023601,
+        "shared_coverage_percent": 2.36
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.3501,
+      "ranking_score": 6.04,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -824,8 +1651,24 @@
       "days_between_acquisitions": 19,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10207.824482,
+        "shared_coverage_fraction": 0.835889,
+        "shared_coverage_percent": 83.59
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.3501,
+      "ranking_score": 79.2,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -836,8 +1679,25 @@
       "days_between_acquisitions": 17,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 4034.275981,
+        "shared_coverage_fraction": 0.330355,
+        "shared_coverage_percent": 33.04
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.4331,
+      "ranking_score": 34.47,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 7
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -848,8 +1708,24 @@
       "days_between_acquisitions": 14,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1778.04688,
+        "shared_coverage_fraction": 0.145599,
+        "shared_coverage_percent": 14.56
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.5169,
+      "ranking_score": 19.48,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -860,8 +1736,25 @@
       "days_between_acquisitions": 12,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10496.299052,
+        "shared_coverage_fraction": 0.859512,
+        "shared_coverage_percent": 85.95
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.6,
+      "ranking_score": 83.36,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 3
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG",
@@ -870,10 +1763,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 11,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.859523,
+      "pre_event_aoi_coverage_percent": 85.95,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 9.48,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.6,
+      "ranking_score": 8.81,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -882,10 +1791,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 24,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.2,
+      "ranking_score": 4.81,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -896,8 +1821,25 @@
       "days_between_acquisitions": 24,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1713.393862,
+        "shared_coverage_fraction": 0.140305,
+        "shared_coverage_percent": 14.03
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.2,
+      "ranking_score": 14.63,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 14
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -908,8 +1850,26 @@
       "days_between_acquisitions": 19,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 252.62971,
+        "shared_coverage_fraction": 0.020687,
+        "shared_coverage_percent": 2.07
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.35,
+      "ranking_score": 5.83,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -920,8 +1880,24 @@
       "days_between_acquisitions": 19,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1461.091918,
+        "shared_coverage_fraction": 0.119645,
+        "shared_coverage_percent": 11.96
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.3501,
+      "ranking_score": 14.68,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -930,10 +1906,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 17,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 250.152512,
+        "shared_coverage_fraction": 0.020484,
+        "shared_coverage_percent": 2.05
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.4331,
+      "ranking_score": 8.57,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -944,8 +1936,25 @@
       "days_between_acquisitions": 14,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 738.694192,
+        "shared_coverage_fraction": 0.06049,
+        "shared_coverage_percent": 6.05
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.5169,
+      "ranking_score": 12.21,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -954,10 +1963,26 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 12,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.6,
+      "ranking_score": 8.81,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260816T122116_20260816T122141_004151_007980_96D7_COG",
@@ -968,8 +1993,25 @@
       "days_between_acquisitions": 12,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.140362,
+      "pre_event_aoi_coverage_percent": 14.04,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1714.09664,
+        "shared_coverage_fraction": 0.140362,
+        "shared_coverage_percent": 14.04
+      },
+      "pre_event_distance_from_reference_days": 9.49,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.6,
+      "ranking_score": 18.63,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 13
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -980,8 +2022,26 @@
       "days_between_acquisitions": 28,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 287.46319,
+        "shared_coverage_fraction": 0.02354,
+        "shared_coverage_percent": 2.35
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.0499,
+      "ranking_score": 3.03,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -992,8 +2052,26 @@
       "days_between_acquisitions": 28,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 251.611944,
+        "shared_coverage_fraction": 0.020604,
+        "shared_coverage_percent": 2.06
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.05,
+      "ranking_score": 2.83,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -1002,10 +2080,28 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 24,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 539.452075,
+        "shared_coverage_fraction": 0.044174,
+        "shared_coverage_percent": 4.42
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.2,
+      "ranking_score": 5.98,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -1014,10 +2110,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 23,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.2,
+      "ranking_score": 2.88,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -1028,8 +2141,26 @@
       "days_between_acquisitions": 21,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 497.013793,
+        "shared_coverage_fraction": 0.040699,
+        "shared_coverage_percent": 4.07
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.2831,
+      "ranking_score": 6.56,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -1038,10 +2169,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 18,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.0,
+        "shared_coverage_fraction": 0.0,
+        "shared_coverage_percent": 0.0
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.3669,
+      "ranking_score": 4.55,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -1052,8 +2200,26 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 287.217479,
+        "shared_coverage_fraction": 0.023519,
+        "shared_coverage_percent": 2.35
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.4499,
+      "ranking_score": 7.03,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001909_20260812T001934_004085_007738_2AFA_COG",
@@ -1064,8 +2230,26 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "Pre-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.044174,
+      "pre_event_aoi_coverage_percent": 4.42,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 251.854148,
+        "shared_coverage_fraction": 0.020624,
+        "shared_coverage_percent": 2.06
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.45,
+      "ranking_score": 6.83,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1076,8 +2260,24 @@
       "days_between_acquisitions": 28,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.859581,
+      "post_event_aoi_coverage_percent": 85.96,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10209.272944,
+        "shared_coverage_fraction": 0.836008,
+        "shared_coverage_percent": 83.6
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 14.52,
+      "temporal_score": 0.0499,
+      "ranking_score": 76.21,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1088,8 +2288,24 @@
       "days_between_acquisitions": 28,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.140305,
+      "post_event_aoi_coverage_percent": 14.03,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1461.397045,
+        "shared_coverage_fraction": 0.11967,
+        "shared_coverage_percent": 11.97
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 14.51,
+      "temporal_score": 0.0499,
+      "ranking_score": 11.68,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1098,10 +2314,27 @@
       "polarizations_match": true,
       "footprints_overlap": true,
       "days_between_acquisitions": 24,
-      "candidate": true,
+      "candidate": false,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Post-event AOI coverage is below the configured minimum of 10%.",
+        "Shared AOI coverage is below the configured minimum of 10%."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.044319,
+      "post_event_aoi_coverage_percent": 4.43,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 0.976163,
+        "shared_coverage_fraction": 8e-05,
+        "shared_coverage_percent": 0.01
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.2,
+      "ranking_score": 2.89,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1112,8 +2345,25 @@
       "days_between_acquisitions": 24,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Preferred screening thresholds passed: both individual coverages and shared coverage meet the configured 80% threshold."
+      ],
+      "pair_status": "preferred",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.955617,
+      "post_event_aoi_coverage_percent": 95.56,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 11669.933638,
+        "shared_coverage_fraction": 0.955617,
+        "shared_coverage_percent": 95.56
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 10.01,
+      "temporal_score": 0.2,
+      "ranking_score": 88.01,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 2
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1124,8 +2374,24 @@
       "days_between_acquisitions": 21,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.350883,
+      "post_event_aoi_coverage_percent": 35.09,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 3787.376367,
+        "shared_coverage_fraction": 0.310137,
+        "shared_coverage_percent": 31.01
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 7.52,
+      "temporal_score": 0.2831,
+      "ranking_score": 31.56,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1136,8 +2402,25 @@
       "days_between_acquisitions": 18,
       "candidate": true,
       "reasons": [
-        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified."
-      ]
+        "Metadata checks passed; geometry, co-registration, and radiometric suitability remain unverified.",
+        "Metadata and minimum coverage checks passed, but the pair does not meet every preferred coverage threshold."
+      ],
+      "pair_status": "partial_coverage",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.206116,
+      "post_event_aoi_coverage_percent": 20.61,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 2517.068737,
+        "shared_coverage_fraction": 0.206116,
+        "shared_coverage_percent": 20.61
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 5.01,
+      "temporal_score": 0.3669,
+      "ranking_score": 22.22,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score.",
+      "rank": 12
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1148,8 +2431,24 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.859512,
+      "post_event_aoi_coverage_percent": 85.95,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 10208.672645,
+        "shared_coverage_fraction": 0.835959,
+        "shared_coverage_percent": 83.6
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 2.52,
+      "temporal_score": 0.4499,
+      "ranking_score": 80.21,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     },
     {
       "pre_event_product_id": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_F79E_COG",
@@ -1160,8 +2459,24 @@
       "days_between_acquisitions": 16,
       "candidate": false,
       "reasons": [
-        "Orbit directions differ."
-      ]
+        "Orbit directions differ.",
+        "The pair failed the existing metadata compatibility checks."
+      ],
+      "pair_status": "rejected",
+      "pre_event_aoi_coverage_fraction": 0.955761,
+      "pre_event_aoi_coverage_percent": 95.58,
+      "post_event_aoi_coverage_fraction": 0.140374,
+      "post_event_aoi_coverage_percent": 14.04,
+      "shared_aoi_coverage": {
+        "shared_area_km2": 1461.994095,
+        "shared_coverage_fraction": 0.119719,
+        "shared_coverage_percent": 11.97
+      },
+      "pre_event_distance_from_reference_days": 13.99,
+      "post_event_distance_from_reference_days": 2.51,
+      "temporal_score": 0.4499,
+      "ranking_score": 15.69,
+      "ranking_score_note": "Heuristic 0-100 screening score: 70% shared coverage, 20% weaker individual coverage, 10% temporal proximity. Not a probability, accuracy estimate, or flood score."
     }
   ]
 }
