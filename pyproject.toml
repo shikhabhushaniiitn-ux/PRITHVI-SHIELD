@@ -1,0 +1,28 @@
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prithvi-shield"
+version = "0.1.0"
+description = "Modular AI and geospatial disaster intelligence prototype"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "PyYAML",
+    "pydantic",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
